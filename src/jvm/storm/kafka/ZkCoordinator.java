@@ -1,12 +1,18 @@
 package storm.kafka;
 
+import static storm.kafka.KafkaUtils.taskId;
+
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.HashSet;
+import java.util.List;
+import java.util.Map;
+import java.util.Set;
+
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+
 import storm.kafka.trident.GlobalPartitionInformation;
-
-import java.util.*;
-
-import static storm.kafka.KafkaUtils.taskId;
 
 public class ZkCoordinator implements PartitionCoordinator {
     public static final Logger LOG = LoggerFactory.getLogger(ZkCoordinator.class);

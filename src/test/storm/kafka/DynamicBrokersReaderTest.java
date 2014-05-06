@@ -1,20 +1,21 @@
 package storm.kafka;
 
-import backtype.storm.Config;
-import com.netflix.curator.framework.CuratorFramework;
-import com.netflix.curator.framework.CuratorFrameworkFactory;
-import com.netflix.curator.retry.ExponentialBackoffRetry;
-import com.netflix.curator.test.TestingServer;
-import com.netflix.curator.utils.ZKPaths;
-import org.junit.After;
-import org.junit.Before;
-import org.junit.Test;
-import storm.kafka.trident.GlobalPartitionInformation;
+import static org.junit.Assert.assertEquals;
 
 import java.util.HashMap;
 import java.util.Map;
 
-import static org.junit.Assert.assertEquals;
+import org.apache.curator.framework.CuratorFramework;
+import org.apache.curator.framework.CuratorFrameworkFactory;
+import org.apache.curator.retry.ExponentialBackoffRetry;
+import org.apache.curator.test.TestingServer;
+import org.apache.curator.utils.ZKPaths;
+import org.junit.After;
+import org.junit.Before;
+import org.junit.Test;
+
+import storm.kafka.trident.GlobalPartitionInformation;
+import backtype.storm.Config;
 
 /**
  * Date: 16/05/2013

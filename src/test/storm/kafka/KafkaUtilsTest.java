@@ -1,8 +1,13 @@
 package storm.kafka;
 
-import backtype.storm.spout.SchemeAsMultiScheme;
-import backtype.storm.utils.Utils;
-import com.google.common.collect.ImmutableMap;
+import static org.hamcrest.CoreMatchers.equalTo;
+import static org.hamcrest.CoreMatchers.is;
+import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertThat;
+
+import java.util.List;
+import java.util.Properties;
+
 import kafka.api.OffsetRequest;
 import kafka.javaapi.consumer.SimpleConsumer;
 import kafka.javaapi.message.ByteBufferMessageSet;
@@ -10,18 +15,16 @@ import kafka.javaapi.producer.Producer;
 import kafka.message.MessageAndOffset;
 import kafka.producer.KeyedMessage;
 import kafka.producer.ProducerConfig;
+
 import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
+
 import storm.kafka.trident.GlobalPartitionInformation;
+import backtype.storm.spout.SchemeAsMultiScheme;
+import backtype.storm.utils.Utils;
 
-import java.util.List;
-import java.util.Properties;
-
-import static org.hamcrest.CoreMatchers.equalTo;
-import static org.hamcrest.CoreMatchers.is;
-import static org.junit.Assert.assertEquals;
-import static org.junit.Assert.assertThat;
+import com.google.common.collect.ImmutableMap;
 
 public class KafkaUtilsTest {
 

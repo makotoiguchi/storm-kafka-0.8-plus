@@ -1,12 +1,12 @@
 package storm.kafka.trident;
 
-import backtype.storm.task.TopologyContext;
-import backtype.storm.tuple.Fields;
-import storm.kafka.Partition;
-import storm.trident.spout.IOpaquePartitionedTridentSpout;
-
 import java.util.Map;
 import java.util.UUID;
+
+import storm.kafka.Partition;
+import storm.trident.spout.IOpaquePartitionedTridentSpout;
+import backtype.storm.task.TopologyContext;
+import backtype.storm.tuple.Fields;
 
 
 public class OpaqueTridentKafkaSpout implements IOpaquePartitionedTridentSpout<GlobalPartitionInformation, Partition, Map> {

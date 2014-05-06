@@ -1,8 +1,9 @@
 package storm.kafka;
 
-import backtype.storm.spout.SchemeAsMultiScheme;
 import java.util.Arrays;
 import java.util.List;
+
+import backtype.storm.spout.SchemeAsMultiScheme;
 
 public class KeyValueSchemeAsMultiScheme extends SchemeAsMultiScheme{
 

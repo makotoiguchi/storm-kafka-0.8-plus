@@ -1,7 +1,8 @@
 package storm.kafka;
 
-import com.google.common.base.Objects;
 import storm.trident.spout.ISpoutPartition;
+
+import com.google.common.base.Objects;
 
 
 public class Partition implements ISpoutPartition {

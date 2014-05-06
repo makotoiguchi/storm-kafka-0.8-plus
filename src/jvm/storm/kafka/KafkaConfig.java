@@ -1,9 +1,9 @@
 package storm.kafka;
 
+import java.io.Serializable;
+
 import backtype.storm.spout.MultiScheme;
 import backtype.storm.spout.RawMultiScheme;
-
-import java.io.Serializable;
 
 public class KafkaConfig implements Serializable {
 

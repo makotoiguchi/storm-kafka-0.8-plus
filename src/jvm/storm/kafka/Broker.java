@@ -1,6 +1,7 @@
 package storm.kafka;
 
 import java.io.Serializable;
+
 import com.google.common.base.Objects;
 
 public class Broker implements Serializable, Comparable<Broker> {

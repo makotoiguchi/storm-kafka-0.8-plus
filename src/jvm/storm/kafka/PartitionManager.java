@@ -1,23 +1,31 @@
 package storm.kafka;
 
+import java.util.HashMap;
+import java.util.LinkedList;
+import java.util.List;
+import java.util.Map;
+import java.util.SortedSet;
+import java.util.TreeSet;
+
+import kafka.api.OffsetRequest;
+import kafka.javaapi.consumer.SimpleConsumer;
+import kafka.javaapi.message.ByteBufferMessageSet;
+import kafka.message.MessageAndOffset;
+
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+
+import storm.kafka.KafkaSpout.EmitState;
+import storm.kafka.KafkaSpout.MessageAndRealOffset;
+import storm.kafka.trident.MaxMetric;
 import backtype.storm.Config;
 import backtype.storm.metric.api.CombinedMetric;
 import backtype.storm.metric.api.CountMetric;
 import backtype.storm.metric.api.MeanReducer;
 import backtype.storm.metric.api.ReducedMetric;
 import backtype.storm.spout.SpoutOutputCollector;
-import com.google.common.collect.ImmutableMap;
-import kafka.api.OffsetRequest;
-import kafka.javaapi.consumer.SimpleConsumer;
-import kafka.javaapi.message.ByteBufferMessageSet;
-import kafka.message.MessageAndOffset;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
-import storm.kafka.KafkaSpout.EmitState;
-import storm.kafka.KafkaSpout.MessageAndRealOffset;
-import storm.kafka.trident.MaxMetric;
 
-import java.util.*;
+import com.google.common.collect.ImmutableMap;
 
 public class PartitionManager {
     public static final Logger LOG = LoggerFactory.getLogger(PartitionManager.class);

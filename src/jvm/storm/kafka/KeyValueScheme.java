@@ -1,8 +1,8 @@
 package storm.kafka;
 
-import backtype.storm.spout.Scheme;
-
 import java.util.List;
+
+import backtype.storm.spout.Scheme;
 
 public interface KeyValueScheme extends Scheme {
 

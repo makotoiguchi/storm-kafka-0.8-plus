@@ -1,9 +1,9 @@
 package storm.kafka;
 
-import kafka.javaapi.consumer.SimpleConsumer;
-
 import java.util.HashMap;
 import java.util.Map;
+
+import kafka.javaapi.consumer.SimpleConsumer;
 
 public class StaticPartitionConnections {
     Map<Integer, SimpleConsumer> _kafka = new HashMap<Integer, SimpleConsumer>();

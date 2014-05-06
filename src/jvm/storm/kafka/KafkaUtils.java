@@ -1,8 +1,14 @@
 package storm.kafka;
 
-import backtype.storm.metric.api.IMetric;
-import backtype.storm.utils.Utils;
-import com.google.common.base.Preconditions;
+import java.net.ConnectException;
+import java.nio.ByteBuffer;
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.Iterator;
+import java.util.List;
+import java.util.Map;
+import java.util.Set;
+
 import kafka.api.FetchRequest;
 import kafka.api.FetchRequestBuilder;
 import kafka.api.PartitionOffsetRequestInfo;
@@ -12,16 +18,18 @@ import kafka.javaapi.OffsetRequest;
 import kafka.javaapi.consumer.SimpleConsumer;
 import kafka.javaapi.message.ByteBufferMessageSet;
 import kafka.message.Message;
+
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+
 import storm.kafka.trident.GlobalPartitionInformation;
 import storm.kafka.trident.IBrokerReader;
 import storm.kafka.trident.StaticBrokerReader;
 import storm.kafka.trident.ZkBrokerReader;
+import backtype.storm.metric.api.IMetric;
+import backtype.storm.utils.Utils;
 
-import java.net.ConnectException;
-import java.nio.ByteBuffer;
-import java.util.*;
+import com.google.common.base.Preconditions;
 
 
 public class KafkaUtils {

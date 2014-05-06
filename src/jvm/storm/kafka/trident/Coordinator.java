@@ -1,10 +1,10 @@
 package storm.kafka.trident;
 
+import java.util.Map;
+
 import storm.kafka.KafkaUtils;
 import storm.trident.spout.IOpaquePartitionedTridentSpout;
 import storm.trident.spout.IPartitionedTridentSpout;
-
-import java.util.Map;
 
 /**
  * Date: 11/05/2013

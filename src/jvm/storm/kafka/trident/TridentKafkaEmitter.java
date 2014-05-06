@@ -1,18 +1,18 @@
 package storm.kafka.trident;
 
-import backtype.storm.Config;
-import backtype.storm.metric.api.CombinedMetric;
-import backtype.storm.metric.api.MeanReducer;
-import backtype.storm.metric.api.ReducedMetric;
-import backtype.storm.task.TopologyContext;
-import backtype.storm.utils.Utils;
-import com.google.common.collect.ImmutableMap;
+import java.util.HashMap;
+import java.util.HashSet;
+import java.util.List;
+import java.util.Map;
+
 import kafka.javaapi.consumer.SimpleConsumer;
 import kafka.javaapi.message.ByteBufferMessageSet;
 import kafka.message.Message;
 import kafka.message.MessageAndOffset;
+
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+
 import storm.kafka.DynamicPartitionConnections;
 import storm.kafka.FailedFetchException;
 import storm.kafka.KafkaUtils;
@@ -21,11 +21,13 @@ import storm.trident.operation.TridentCollector;
 import storm.trident.spout.IOpaquePartitionedTridentSpout;
 import storm.trident.spout.IPartitionedTridentSpout;
 import storm.trident.topology.TransactionAttempt;
+import backtype.storm.Config;
+import backtype.storm.metric.api.CombinedMetric;
+import backtype.storm.metric.api.MeanReducer;
+import backtype.storm.metric.api.ReducedMetric;
+import backtype.storm.task.TopologyContext;
 
-import java.util.HashMap;
-import java.util.HashSet;
-import java.util.List;
-import java.util.Map;
+import com.google.common.collect.ImmutableMap;
 
 /**
  * Date: 21/05/2013

@@ -1,9 +1,10 @@
 package storm.kafka;
 
-import backtype.storm.tuple.Values;
-import com.google.common.collect.ImmutableMap;
-
 import java.util.List;
+
+import backtype.storm.tuple.Values;
+
+import com.google.common.collect.ImmutableMap;
 
 public class StringKeyValueScheme extends StringScheme implements KeyValueScheme {
 
